@@ -608,3 +608,11 @@ img { max-width:100%; }
  .portfolio-cta .start-project{width:100%;justify-content:center}
  .page-hero-image{height:32vh;min-height:230px;margin-top:28px}
 }
+
+/* Compact two-column image browsing across the site on mobile. */
+@media(max-width:700px){
+ .portfolio-grid,.boards-grid,.commercial-grid,.home-gallery,.inspiration-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .portfolio-card,.board-card,.commercial-grid>*{min-width:0}
+ .portfolio-card .image-frame{aspect-ratio:4/3}
+ .boards-grid img,.commercial-grid img{max-height:230px;object-fit:cover}
+}
