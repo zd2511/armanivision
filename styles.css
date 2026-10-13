@@ -589,3 +589,22 @@ img { max-width:100%; }
   .home-page .commercial-grid figure,
   .home-page .commercial-grid figure img { height: 175px; }
 }
+
+/* Portfolio conversion and compact mobile browsing refinements */
+.portfolio-card .image-frame{overflow:hidden}
+.portfolio-card img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s}
+.portfolio-card:hover img{transform:scale(1.045);filter:saturate(1.05)}
+.portfolio-cta{display:flex;align-items:center;justify-content:space-between;gap:28px;margin:68px 0 12px;padding:36px 40px;background:#201f1c;border:1px solid rgba(194,157,91,.35)}
+.portfolio-cta h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);font-weight:500;line-height:1.08;margin:10px 0}
+.portfolio-cta p{color:var(--gray);max-width:540px;margin-bottom:0}
+@media(max-width:700px){
+ .portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .portfolio-card,.portfolio-card:nth-child(3n+1),.portfolio-card:nth-child(3n+2),.portfolio-card:nth-child(5n){grid-column:span 1;min-width:0}
+ .portfolio-card .image-frame,.portfolio-card:nth-child(3n+1) .image-frame,.portfolio-card:nth-child(5n) .image-frame{height:clamp(155px,34vw,235px)}
+ .portfolio-overlay{padding:12px 10px;transform:none;background:linear-gradient(transparent,rgba(0,0,0,.82))}
+ .portfolio-overlay small{font-size:8px;letter-spacing:.08em}
+ .portfolio-overlay h3{font-size:clamp(13px,3.3vw,17px);line-height:1.12;margin:5px 0 0}
+ .portfolio-cta{display:flex;flex-direction:column;align-items:flex-start;margin:38px 0 0;padding:24px 20px;gap:20px}
+ .portfolio-cta .start-project{width:100%;justify-content:center}
+ .page-hero-image{height:32vh;min-height:230px;margin-top:28px}
+}
